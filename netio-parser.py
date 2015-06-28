@@ -9,20 +9,6 @@ import sys
 
 import libs.parse
 
-#def addtable(swidth, txwidth, rxwidth, svalue='', txvalue='', rxvalue='', \
-#            sep="|"):
-#    """ a little function to help with the table
-#    
-#    swidth  - with of the size column
-#    svalue - value for the size column
-#    txwidth,txvalue,... the same
-#    """
-    
-#    print("{:<{space}}{}".format(svalue, sep, space=swidth),end="")
-#    print("{:^{space}}{}".format(txvalue, sep, space=txwidth),end="")
-#    print("{:^{space}}{}".format(rxvalue, sep, space=rxwidth))    
-
-
 #RX = {  "1k"    : [], "2k"    : [], "4k"    : [],    # result buffer
 #        "8k"    : [], "16k"   : [], "32k"   : [] }
 
@@ -43,27 +29,6 @@ parser = libs.parse.Parse(linesplit)
 
 parser.calculate()
 print(parser.average("TX", "1k"))
-
-#invalid = 0
-#for line in linesplit:
-#    if(not "Packet size" in line):
-#        continue
-#    
-    # example: "Packet size  1k bytes:  57.08 KByte/s Tx,  31.73 KByte/s Rx."
-#    tmp = line.rsplit("  ",2)            # ['Packet size  1k bytes:', '57.08 KByte/s Tx,', '31.73 KByte/s Rx.']
-#    if(len(tmp) != 3 or not "Rx" in tmp[-1]):
-#        invalid += 1
-#        continue
-    
-#    txtmp = tmp[1].split(" ")[0]         # '57.08'
-#    rxtmp = tmp[2].split(" ")[0]         # '31.73'
-#    
-#    packetsize = tmp[0].rsplit(" ",2)[1] # '1k'
-    
-#    TX[packetsize].append(float(txtmp))
-#    RX[packetsize].append(float(rxtmp))
-
-#sys.exit()
     
 print("NETIO-Speedresults")
 print("------------------")
